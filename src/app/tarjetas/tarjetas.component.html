@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table,
+    th,
+    td {
+        border: 3px solid black;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <table class="table" border="1" align="center">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Numero</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Marca </font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Tipo </font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Cedula usuario</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Estado Tarjeta</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Fecha vencimiento</font>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody align="center">
+                    <tr *ngFor="let cards of _postsArray">
+                        <th class="text-center" style="width: 200px;">
+                            <font color="aqua">{{cards.card_number}}</font>
+                        </th>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{cards.card_franchise}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{cards.card_type}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{cards.customer_id}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{cards.card_state}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{cards.card_payDate}}</font>
+                        </td>
+                        <td class="text-center" style="width: 105px;">
+                            <a href="http://localhost:4000/api/cambiarEstadoA/{{cards.card_number}}" onclick="window.open(this.href, 'Confirmado', 'width=150, height=90, left=24, top=24, scrollbars, resizable'); return false;"><button onClick="location.href=location.href">Activar tarjeta</button></a>
+                        </td>
+                        <td class="text-center" style="width: 120px;">
+                            <a href="http://localhost:4000/api/cambiarEstadoD/{{cards.card_number}}" onclick="window.open(this.href, 'Confirmado', 'width=150, height=90, left=24, top=24, scrollbars, resizable'); return false;"><button onClick="location.href=location.href">Cancelar tarjeta</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

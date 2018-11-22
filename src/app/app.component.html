@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: "./images/1.jpg";
+        width: 100%;
+        height: 900%;
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+    
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    .topnav a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<head>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+
+<body align="center">
+    <div class="topnav">
+        <a routerLinkActive="active" routerLink="tarjetas">Tarjetas</a>
+        <a routerLinkActive="active" routerLink="cuentas">Cuentas</a>
+        <a routerLinkActive="active" routerLink="usuarios">Usuarios</a>
+    </div>
+    <router-outlet></router-outlet>
+
+    <div class="clear"></div>
+    <div class="w3layouts-errortext">
+        <h2>Banco Lasallista</h2>
+    </div>
+</body>
+
+</html>

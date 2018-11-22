@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table,
+    th,
+    td {
+        border: 3px solid black;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cuentas</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table" border="1" align="center">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Cedula</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Numero Cuenta</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Balance Cuenta</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Tipo Cuenta</font>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody align="center">
+                    <tr *ngFor="let accounts of _postsArray">
+                        <th class="text-center" style="width: 200px;">
+                            <font color="aqua">{{accounts.customer_documentId}}</font>
+                        </th>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{accounts.numberAccount}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{accounts.cashBalance}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{accounts.typeAccount}}</font>
+                        </td>
+                        <td class="text-center" style="width: 120px;">
+                            <a href="http://localhost:4000/api/cambiarSaldo/{{accounts.customer_documentId}}" onclick="window.open(this.href, 'Confirmado', 'width=150, height=90, left=24, top=24, scrollbars, resizable'); return false;"><button onClick="location.href=location.href">Reiniciar saldo</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <form  action="">
+        <input type="text">
+        <button type="submit"></button>
+    </form>
+
+
+</body>
+
+</html>

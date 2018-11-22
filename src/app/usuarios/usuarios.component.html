@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    table,
+    th,
+    td {
+        border: 3px solid black;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <table class="table" border="1" align="center">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Cedula</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Nombre</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">E-Mail</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Tipo Persona</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Fecha Nacimiento</font>
+                        </th>
+                        <th class="text-center" style="width: 200px;">
+                            <font color="yellow">Telefono</font>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody align="center">
+                    <tr *ngFor="let customers of _postsArray">
+                        <th class="text-center" style="width: 200px;">
+                            <font color="aqua">{{customers.basic.customer_documentId}}</font>
+                        </th>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{customers.basic.customer_name}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{customers.detail.customer_emailJob}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{customers.basic.customer_type}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{customers.basic.customer_bornDate}}</font>
+                        </td>
+                        <td class="text-center" style="width: 200px;">
+                            <font color="White">{{customers.detail.legalRepresentative_phone}}</font>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
